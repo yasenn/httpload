@@ -1,15 +1,39 @@
 # HTTPload - tool for test webserver availability under highload
 
+Upd: use `golang` implementation instead of `httload.c`
+
+`httpload` tries to connect to web-server with provided verb (`GET`|`POST`) 
+
+You can modify:
+
+* concurrent threads count
+* requests count
+
 # Usage
 ```
-httpload <count>
+httpload https://google.com -b POST -c 100 -n 1000
 ```
 
-# Build
+# Build go module
 
 ```
-make 
-./httpload 100
+make go
+./httpload https://google.com
+```
+
+## Clean build
+
+```
+make clean
+```
+
+# Legacy `httpload`
+
+## Build 
+
+```
+make
+./httpload <count>
 ```
 
 ## Clean build
